@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animations="clr-namespace:ChangeRingPlace.Animations"
+             xmlns:triggers="clr-namespace:ChangeRingPlace.Triggers"
              x:Class="ChangeRingPlace.Views.HomePage"
              Title="Home Page">
     <ContentPage.Resources>
@@ -16,11 +18,28 @@
                 <Setter Property="HorizontalTextAlignment"
                         Value="Center" />
             </Style>
+
+            <animations:StoryBoard x:Key="HomeLabelAnimation"
+                                   Target="{x:Reference HomePageLabel}"
+                                   Delay="1000"
+                                   RepeatForever="True">
+                <animations:ScaleToAnimation Scale="1.25"
+                                             Duration="1000"/>
+                <animations:ScaleToAnimation Scale="1"
+                                             Duration="1000" />
+            </animations:StoryBoard>
+
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ContentPage.Triggers>
+        <EventTrigger Event="Appearing">
+            <triggers:BeginAnimation
+                    Animation="{StaticResource HomeLabelAnimation}" />
+        </EventTrigger>
+    </ContentPage.Triggers>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Style="{StaticResource HomeLabelStyle}" Text="HOME APP CHANGE-RING-PLACE" />
+            <Label x:Name="HomePageLabel" Style="{StaticResource HomeLabelStyle}" Text="HOME APP CHANGE-RING-PLACE" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
