@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChangeRingPlace.Views.HomePage"
+             Title="Home Page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="HomeLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratBoldLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource GreenColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargerSize}" />
+                <Setter Property="HorizontalTextAlignment"
+                        Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Style="{StaticResource HomeLabelStyle}" Text="HOME APP CHANGE-RING-PLACE" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

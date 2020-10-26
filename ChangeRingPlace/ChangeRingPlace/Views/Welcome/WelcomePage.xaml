@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChangeRingPlace.Views.Welcome.WelcomePage"
+             Title="Welcome Page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="WelcomeLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratBoldLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource GreenColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargerSize}" />
+                <Setter Property="HorizontalTextAlignment"
+                        Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Text="C'est votre premiere ? On vous explique tout !"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
